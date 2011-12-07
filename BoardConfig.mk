@@ -60,6 +60,8 @@ BOARD_OVERLAY_MINIFICATION_LIMIT := 2
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
 
+BOARD_USE_QCOM_PMEM := true
+
 # cat /proc/emmc
 # dev:        size     erasesize name
 # mmcblk0p17: 00040000 00000200 "misc"
