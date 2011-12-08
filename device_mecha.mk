@@ -183,7 +183,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # mecha uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+# PRODUCT_LOCALES += hdpi
+PRODUCT_LOCALES += en
 
 PRODUCT_COPY_FILES += \
     device/htc/mecha/vold.fstab:system/etc/vold.fstab
