@@ -27,6 +27,7 @@ PRODUCT_COPY_FILES += \
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/google-vendor.mk)
+$(call inherit-product-if-exists, vendor/google/verizon-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/twisted-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
@@ -183,7 +184,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_TAGS += dalvik.gc.type-precise
 
 # mecha uses high-density artwork where available
-PRODUCT_LOCALES += hdpi
+# PRODUCT_LOCALES += hdpi
 PRODUCT_LOCALES += en
 
 PRODUCT_COPY_FILES += \
