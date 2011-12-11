@@ -26,9 +26,8 @@ PRODUCT_COPY_FILES += \
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
-$(call inherit-product-if-exists, vendor/google/google-vendor.mk)
-$(call inherit-product-if-exists, vendor/google/verizon-vendor.mk)
 $(call inherit-product-if-exists, vendor/google/twisted-vendor.mk)
+# $(call inherit-product-if-exists, vendor/google/shaky153-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -192,6 +191,7 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/mecha/kernel/kernel
+	# LOCAL_KERNEL := vendor/shaky153/kernel/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -201,6 +201,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_COPY_FILES += \
     device/htc/mecha/kernel/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    # vendor/shaky153/kernel/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
