@@ -94,6 +94,10 @@ ro.ril.def.agps.mode=6
 # Emmc Phone Storage
 ro.phone_storage=0
 
+# System Settings
+ro.config.htc.nocheckin = 1
+persist.sys.strictmode.visual=0
+
 # Welly Fang
 ro.cdma.home.operator.numeric=310012
 ro.cdma.home.operator.alpha=Verizon
