@@ -26,8 +26,8 @@ PRODUCT_COPY_FILES += \
 
 ## (2) Also get non-open-source GSM-specific aspects if available
 $(call inherit-product-if-exists, vendor/htc/mecha/mecha-vendor.mk)
-$(call inherit-product-if-exists, vendor/google/twisted-vendor.mk)
-# $(call inherit-product-if-exists, vendor/google/shaky153-vendor.mk)
+$(call inherit-product-if-exists, vendor/twisted/twisted-vendor.mk)
+# $(call inherit-product-if-exists, vendor/shaky153/shaky153-vendor.mk)
 
 ## (3)  Finally, the least specific parts, i.e. the non-GSM-specific aspects
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -199,9 +199,22 @@ endif
 PRODUCT_COPY_FILES += \
     $(LOCAL_KERNEL):kernel
 
+# Kernel Modules
 PRODUCT_COPY_FILES += \
-    device/htc/mecha/kernel/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+    device/htc/mecha/kernel/lib/modules/cifs.ko:system/lib/modules/cifs.ko \
+    device/htc/mecha/kernel/lib/modules/lzo_compress.ko:system/lib/modules/lzo_compress.ko \
+    device/htc/mecha/kernel/lib/modules/lzo_decompress.ko:system/lib/modules/lzo_decompress.ko \
+    device/htc/mecha/kernel/lib/modules/tun.ko:system/lib/modules/tun.ko \
+    device/htc/mecha/kernel/lib/modules/zram.ko:system/lib/modules/zram.ko \
+    device/htc/mecha/kernel/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
     # vendor/shaky153/kernel/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
+
+# Kernel Customization
+PRODUCT_COPY_FILES += \
+    device/htc/mecha/kernel/sbin/speedtweak.sh:root/sbin/speedtweak.sh \
+    device/htc/mecha/kernel/sbin/zram:root/sbin/zram \
+    device/htc/mecha/kernel/xbin/wget:system/xbin/wget \
+    device/htc/mecha/kernel/etc/init.d:system/etc/init.d
 
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
