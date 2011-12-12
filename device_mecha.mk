@@ -220,10 +220,10 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
 
 # media profiles and capabilities spec
-#$(call inherit-product, device/htc/mecha/media_a1026.mk)
+$(call inherit-product, device/htc/mecha/media_a1026.mk)
 
 # htc audio settings
-$(call inherit-product, device/htc/mecha/media_htcaudio.mk)
+# $(call inherit-product, device/htc/mecha/media_htcaudio.mk)
 
 # stuff common to all HTC phones
 #$(call inherit-product, device/htc/common/common.mk)
