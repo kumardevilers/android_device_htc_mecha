@@ -83,8 +83,7 @@ PRODUCT_COPY_FILES += \
 # config xml file
 PRODUCT_COPY_FILES += \
     device/htc/mecha/voicemail-conf.xml:system/etc/voicemail-conf.xml \
-    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml \
-    device/htc/mecha/media_profiles.xml:system/etc/media_profiles.xml
+    device/htc/mecha/apns-conf.xml:system/etc/apns-conf.xml
 
 PRODUCT_PACKAGES += \
     lights.mecha \
@@ -194,7 +193,6 @@ PRODUCT_COPY_FILES += \
 
 ifeq ($(TARGET_PREBUILT_KERNEL),)
 	LOCAL_KERNEL := device/htc/mecha/kernel/kernel
-	# LOCAL_KERNEL := vendor/shaky153/kernel/kernel
 else
 	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
 endif
@@ -210,7 +208,6 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/kernel/lib/modules/tun.ko:system/lib/modules/tun.ko \
     device/htc/mecha/kernel/lib/modules/zram.ko:system/lib/modules/zram.ko \
     device/htc/mecha/kernel/lib/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
-    # vendor/shaky153/kernel/modules/bcm4329.ko:system/lib/modules/bcm4329.ko
 
 # Kernel Customization
 PRODUCT_COPY_FILES += \
@@ -218,6 +215,11 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/kernel/sbin/zram:root/sbin/zram \
     device/htc/mecha/kernel/xbin/wget:system/xbin/wget \
     device/htc/mecha/kernel/etc/init.d:system/etc/init.d
+
+# Verizon Applications
+PRODUCT_COPY_FILES += \
+    vendor/twisted/verizon/app/VZWAPNLib.apk:system/app/VZWAPNLib.apk \
+    vendor/twisted/verizon/app/VZWAPNService.apk:system/app/VZWAPNService.apk
 
 # common msm7x30 configs
 $(call inherit-product, device/htc/msm7x30-common/msm7x30.mk)
