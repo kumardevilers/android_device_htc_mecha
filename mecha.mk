@@ -87,11 +87,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     lights.mecha \
-    sensors.mecha \
-    audio.a2dp.default \
-    audio.primary.msm7x30 \
-    libaudioutils \
-    libtinyalsa
+    sensors.mecha
 
 # Keylayouts
 PRODUCT_COPY_FILES += \

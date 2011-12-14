@@ -14,5 +14,5 @@
 # limitations under the License.
 #
 PRODUCT_PROPERTY_OVERRIDES += \
-    htc.audio.alt.enable=1 \
-    htc.audio.hac.enable=1
+      htc.audio.alt.enable                 = 0 \
+      htc.audio.hac.enable                 = 0
