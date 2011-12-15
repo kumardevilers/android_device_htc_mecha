@@ -34,8 +34,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.ril.enable.a52=0 \
     ro.ril.enable.a53=1 \
     ro.ril.def.agps.mode=6 \
-    htc.audio.alt.enable=1 \
-    htc.audio.hac.enable=1 \
+    htc.audio.alt.enable=0 \
+    htc.audio.hac.enable=0 \
     ro.com.google.clientidbase=android-htc \
     ro.com.google.clientidbase.yt=android-htc \
     ro.com.google.clientidbase.am=android-verizon \
@@ -229,11 +229,15 @@ $(call inherit-product, device/htc/common/common.mk)
 $(call inherit-product, build/target/product/full_base.mk)
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-# PRODUCT_BRAND := HTC
 PRODUCT_BRAND := verizon_wwe
 PRODUCT_NAME := htc_mecha
 PRODUCT_DEVICE := mecha
-# PRODUCT_MODEL := HTC ThunderBolt
 PRODUCT_MODEL := ThunderBolt
 PRODUCT_MANUFACTURER := HTC
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=htc_mecha BUILD_ID=GRJ22 BUILD_DISPLAY_ID=GRJ90 BUILD_FINGERPRINT=verizon_wwe/htc_mecha/mecha:2.3.4/GRJ22/120826.3:user/release-keys PRIVATE_BUILD_DESC="4.08.605.3 CL120826 release-keys"
+
+# Prevent Audio Reboots
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME=htc_mecha \
+    BUILD_ID=GRJ22 \
+    BUILD_FINGERPRINT=verizon_wwe/htc_mecha/mecha:2.3.4/GRJ22/120826.3:user/release-keys \
+    PRIVATE_BUILD_DESC="4.08.605.3 CL120826 release-keys"
