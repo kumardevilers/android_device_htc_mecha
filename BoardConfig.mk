@@ -25,6 +25,8 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
+
 # inherit from common msm7x30 device
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
