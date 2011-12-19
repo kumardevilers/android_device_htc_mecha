@@ -25,8 +25,6 @@
 # against the traditional rules of inheritance).
 USE_CAMERA_STUB := true
 
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
-
 # inherit from common msm7x30 device
 -include device/htc/msm7x30-common/BoardConfigCommon.mk
 
@@ -54,6 +52,8 @@ USE_IPV6_ROUTE := true
 # Additional Camera hacks for mecha
 BOARD_HAVE_HTC_FFC := true
 BOARD_USE_REVERSE_FFC := true
+
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/file
 
 # Hack for improper scaling.
 # BOARD_OVERLAY_MINIFICATION_LIMIT := 2
