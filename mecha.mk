@@ -215,7 +215,6 @@ PRODUCT_COPY_FILES += \
 # init.d Customization
 PRODUCT_COPY_FILES += \
     device/htc/mecha/kernel/etc/init.d/01vdd_levels:system/etc/init.d/01vdd_levels \
-    device/htc/mecha/kernel/bin/sysinit:system/bin/sysinit
 
 # Verizon Applications
 PRODUCT_COPY_FILES += \
