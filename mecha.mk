@@ -211,7 +211,11 @@ PRODUCT_COPY_FILES += \
     device/htc/mecha/kernel/sbin/speedtweak.sh:root/sbin/speedtweak.sh \
     device/htc/mecha/kernel/sbin/zram:root/sbin/zram \
     device/htc/mecha/kernel/xbin/wget:system/xbin/wget \
-    device/htc/mecha/kernel/etc/init.d:system/etc/init.d
+
+# init.d Customization
+PRODUCT_COPY_FILES += \
+    device/htc/mecha/kernel/etc/init.d/01vdd_levels:system/etc/init.d/01vdd_levels \
+    device/htc/mecha/kernel/bin/sysinit:system/bin/sysinit
 
 # Verizon Applications
 PRODUCT_COPY_FILES += \
