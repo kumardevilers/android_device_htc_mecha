@@ -103,3 +103,6 @@ persist.sys.strictmode.visual=0
 ro.cdma.home.operator.numeric=310012
 ro.cdma.home.operator.alpha=Verizon
 ro.htc.device.slot1=RUIM
+
+# USB Mount
+persist.sys.usb.config=mass_storage,adb
