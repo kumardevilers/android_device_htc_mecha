@@ -235,3 +235,7 @@ PRODUCT_NAME := htc_mecha
 PRODUCT_DEVICE := mecha
 PRODUCT_MODEL := ADR6400L
 PRODUCT_MANUFACTURER := HTC
+
+PRODUCT_PROPERTY_OVERRIDES += \
+ ro.telephony.ril.v3=datacall \
+ ro.telephony.ril.v3=signalstrength
