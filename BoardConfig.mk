@@ -31,6 +31,9 @@ USE_CAMERA_STUB := true
 # inherit from the proprietary version
 -include vendor/htc/mecha/BoardConfigVendor.mk
 
+# Workaround for mecha broken overlay scaling
+# BOARD_OVERLAY_MINIFICATION_LIMIT := 2
+
 TARGET_BOOTLOADER_BOARD_NAME := mecha
 
 # Use stock libril for now
@@ -38,16 +41,6 @@ TARGET_PROVIDES_LIBRIL := vendor/htc/mecha/proprietary/libril.so
 BOARD_MOBILEDATA_INTERFACE_NAME := "rmnet_sdio0"
 BOARD_HAS_EXTRA_SYS_PROPS := true
 USE_IPV6_ROUTE := true
-
-# Wifi related defines - Previous
-# BOARD_WPA_SUPPLICANT_DRIVER := WEXT
-# WPA_SUPPLICANT_VERSION      := VER_0_6_X
-# BOARD_WLAN_DEVICE           := bcm4329
-# WIFI_DRIVER_MODULE_PATH     := "/system/lib/modules/bcm4329.ko"
-# WIFI_DRIVER_FW_STA_PATH     := "/vendor/firmware/fw_bcm4329.bin"
-# WIFI_DRIVER_FW_AP_PATH      := "/vendor/firmware/fw_bcm4329_apsta.bin"
-# WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/firmware/fw_bcm4329.bin nvram_path=/proc/calibration"
-# WIFI_DRIVER_MODULE_NAME     := "bcm4329"
 
 # Additional Camera hacks for mecha
 BOARD_HAVE_HTC_FFC := true
@@ -61,18 +54,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/usb_mass_storage/lun0/f
 # GPS Defines
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := mecha
 BOARD_VENDOR_QCOM_GPS_LOC_API_AMSS_VERSION := 50000
-
-# cat /proc/emmc
-# dev:        size     erasesize name
-# mmcblk0p17: 00040000 00000200 "misc"
-# mmcblk0p21: 0087f400 00000200 "recovery"
-# mmcblk0p22: 00400000 00000200 "boot"
-# mmcblk0p25: 35dffe00 00000200 "system"
-# mmcblk0p28: 001ffe00 00000200 "local"
-# mmcblk0p27: 1b4ffc00 00000200 "cache"
-# mmcblk0p26: a7c00000 00000200 "userdata"
-# mmcblk0p29: 014bfe00 00000200 "devlog"
-# mmcblk0p30: 00040000 00000200 "pdata"
 
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 585101312
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 1232072704
